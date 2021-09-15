@@ -1,2 +1,1 @@
 # ROCKET_19
-Learn MySQL
