@@ -239,4 +239,12 @@ public class TestingSystemData {
 		}
 	}
 
+	//EX2-Q6
+	public void printTable() {
+		System.out.printf("%15s | %15s | %15s | %15s\n","Id","Email","UserName","FullName");
+		System.out.printf("%10s--------------------------------------------------------------------\n","");
+		for (Account account : listAccount) {
+			account.print1();
+		}
+	}
 }

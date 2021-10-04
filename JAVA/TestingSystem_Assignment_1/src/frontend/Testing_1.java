@@ -56,8 +56,12 @@ public class Testing_1 {
 //		// Q13
 //		testData.printAllExceptAcc2();
 		
-		// Q14
-		testData.printAccLessThan4();
+//		// Q14
+//		testData.printAccLessThan4();
 
+		
+		//EX2-Q6
+		testData.printTable();
+		
 	}
 }

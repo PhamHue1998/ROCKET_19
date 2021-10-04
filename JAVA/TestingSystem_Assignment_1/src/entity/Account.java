@@ -106,4 +106,8 @@ public class Account {
 		System.out.println("Id: " + id + "\n" + "FullName: " + fullName + "\n" + "Email: " + email);
 	}
 
+	public void print1() {
+		System.out.printf("%15s | %15s | %15s | %15s\n",id,email,userName,fullName);
+
+	}
 }
