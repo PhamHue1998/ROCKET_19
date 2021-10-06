@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import entity.Account;
+import entity.CategoryQuestion;
 import entity.Department;
+import entity.Exam;
 import entity.Group;
 import entity.Position;
 import entity.Position.PositionName;
@@ -17,6 +19,7 @@ public class TestingSystemData {
 	public List<Position> listPosition;
 	public List<Department> listDepartment;
 	public List<Group> listGroup;
+	public List<Exam> listExam;
 
 	// Khởi tạo data
 	public TestingSystemData() {
@@ -62,6 +65,21 @@ public class TestingSystemData {
 
 		// add Group to List
 		listGroup = new ArrayList<Group>(Arrays.asList(group1, group2, group3, group4));
+
+		// Create data for CategoryQuestion
+		CategoryQuestion cateory1 = new CategoryQuestion(1, "Category1");
+		CategoryQuestion cateory2 = new CategoryQuestion(2, "Category2");
+		CategoryQuestion cateory3 = new CategoryQuestion(3, "Category3");
+
+		// Create data for Exam
+		Exam ex1 = new Exam(1, "1111", "Ex1", cateory1, 60, ac1, LocalDate.of(2018, Month.AUGUST, 25));
+		Exam ex2 = new Exam(2, "2222", "Ex2", cateory2, 60, ac2, LocalDate.of(2019, Month.MAY, 11));
+		Exam ex3 = new Exam(3, "3333", "Ex3", cateory3, 60, ac3, LocalDate.of(2020, Month.OCTOBER, 18));
+		//listExam = new ArrayList<Exam>(Arrays.asList(ex1, ex2, ex3));
+		
+		listExam.add(ex1);
+		listExam.add(ex3);
+		
 	}
 
 //	Question 1
@@ -239,12 +257,19 @@ public class TestingSystemData {
 		}
 	}
 
-	//EX2-Q6
+	// EX2-Q6
 	public void printTable() {
-		System.out.printf("%15s | %15s | %15s | %15s\n","Id","Email","UserName","FullName");
-		System.out.printf("%10s--------------------------------------------------------------------\n","");
+		System.out.printf("%15s | %15s | %15s | %15s\n", "Id", "Email", "UserName", "FullName");
+		System.out.printf("%10s--------------------------------------------------------------------\n", "");
 		for (Account account : listAccount) {
 			account.print1();
+		}
+	}
+	
+	
+	public void test() {
+		for (Exam e : listExam) {
+			System.out.println(e.toString());
 		}
 	}
 }
